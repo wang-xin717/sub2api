@@ -143,6 +143,26 @@
       }
     },
     {
+      "id": "qwen",
+      "display_name": "Qwen",
+      "gateway": "openai",
+      "cn_provider": false,
+      "litellm_provider": "qwen",
+      "multi_protocol": {
+        "default_mode": "payg",
+        "routing": "by_inbound",
+        "modes": [
+          {
+            "mode": "payg",
+            "base_urls": {
+              "chat_completions": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+              "responses": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "opencode_go",
       "display_name": "OpenCode",
       "gateway": "openai",
@@ -290,6 +310,7 @@
     "zhipu",
     "deepseek",
     "minimax",
+    "qwen",
     "opencode_go",
     "typesafe",
     "command_code",

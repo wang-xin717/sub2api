@@ -167,6 +167,20 @@ var providerProfiles = map[string]*ProviderProfile{
 			},
 		},
 	},
+	PlatformQwen: {
+		Platform:    PlatformQwen,
+		DefaultMode: AccountModePayG,
+		Routing:     ProviderRoutingByInbound,
+		// 百炼无官方 Anthropic 兼容端点，故只登记 chat_completions 与 responses。
+		Modes: map[string]ProviderEndpoints{
+			AccountModePayG: {
+				BaseURLs: map[string]string{
+					APIProtocolChatCompletions: DefaultQwenBaseURL,
+					APIProtocolResponses:       DefaultQwenBaseURL,
+				},
+			},
+		},
+	},
 	PlatformOpenCodeGo: {
 		Platform:         PlatformOpenCodeGo,
 		DefaultMode:      AccountModeGo,
